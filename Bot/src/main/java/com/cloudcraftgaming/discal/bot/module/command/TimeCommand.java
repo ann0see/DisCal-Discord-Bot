@@ -5,10 +5,10 @@ import com.cloudcraftgaming.discal.api.calendar.CalendarAuth;
 import com.cloudcraftgaming.discal.api.database.DatabaseManager;
 import com.cloudcraftgaming.discal.api.message.Message;
 import com.cloudcraftgaming.discal.api.message.MessageManager;
+import com.cloudcraftgaming.discal.api.message.calendar.CalendarMessageFormatter;
 import com.cloudcraftgaming.discal.api.object.GuildSettings;
 import com.cloudcraftgaming.discal.api.object.calendar.CalendarData;
 import com.cloudcraftgaming.discal.api.object.command.CommandInfo;
-import com.cloudcraftgaming.discal.bot.internal.calendar.calendar.CalendarMessageFormatter;
 import com.cloudcraftgaming.discal.logger.Logger;
 import com.google.api.services.calendar.model.Calendar;
 import sx.blah.discord.handle.impl.events.guild.channel.message.MessageReceivedEvent;
@@ -105,7 +105,7 @@ public class TimeCommand implements ICommand {
 				em.appendField(MessageManager.getMessage("Embed.Time.TimeZone", settings), cal.getTimeZone(), false);
 
 				em.withFooterText(MessageManager.getMessage("Embed.Time.Footer", settings));
-				em.withUrl(CalendarMessageFormatter.getCalendarLink(cal.getId()));
+				em.withUrl(CalendarMessageFormatter.getCalendarLink(settings.getGuildID()));
 				em.withColor(56, 138, 237);
 				Message.sendMessage(em.build(), event);
 			}

@@ -219,6 +219,16 @@ label {
 	border-radius: 10px;
 }
 
+.announcement-edit-container-all {
+	display: inline-block;
+}
+
+.announcement-edit-container-single {
+	display: block;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
 /* Navigation bar */
 .top-nav {
 	overflow: hidden;
@@ -230,7 +240,20 @@ label {
 	color: white;
 	text-align: center;
 	margin: auto 15px;
-	font-size: 25pt;
+}
+
+.top-nav h1:hover {
+	color: #090809;
+}
+
+.top-nav a.title {
+	padding: 0;
+	margin: auto 15px;
+}
+
+.top-nav a.title:hover {
+	color: #090809;
+	background: transparent;
 }
 
 .top-nav a {
